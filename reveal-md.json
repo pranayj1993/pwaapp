@@ -1,0 +1,12 @@
+{
+  "controls": true,
+  "progress": true,
+  "preprocessor": "presentation/reveal-config.js",
+  "theme": "presentation/stark.css",
+  "highlightTheme": "vs",
+  "watch": true,
+  "revealOptions": {
+    "transition": "fade"
+  },
+  "disable-auto-open": true
+}

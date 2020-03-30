@@ -1,0 +1,39 @@
+{
+  "name": "pwaapp",
+  "version": "1.0.0",
+  "description": "Malcolm Meyer",
+  "main": "index.js",
+  "scripts": {
+    "present": "node node_modules/reveal-md/bin/reveal-md.js README.md",
+    "build": "node scripts/pwa-build",
+    "copy": "node scripts/pwa-clone-basemap",
+    "start": "http-server -p 8000 -o",
+    "start-dev": "http-server ./dist",
+    "deploy": "node_modules/netlify-cli/bin/run deploy --prod",
+    "cache": "node scripts/pwa-sw-sample",
+    "workbox-wizard": "node node_modules/workbox-cli/build/bin.js wizard",
+    "workbox-cache": "node node_modules/workbox-cli/build/bin.js generateSW workbox-config.js",
+    "workbox-cache-dist": "node node_modules/workbox-cli/build/bin.js generateSW workbox-config-dist.js",
+    "purge": "node scripts/pwa-purge"
+  },
+  "keywords": [
+    "progressive web app",
+    "maps",
+    "mapbox",
+    "openmaptiles",
+    "vector tiles"
+  ],
+  "author": "Malcolm Meyer",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "http-server": "^0.11.1",
+    "mapbox-gl": "^0.53.1",
+    "netlify-cli": "^2.11.15",
+    "workbox-cli": "^4.3.1"
+  },
+  "devDependencies": {
+    "delete": "^1.1.0",
+    "reveal-md": "^3.0.1"
+  }
+}
