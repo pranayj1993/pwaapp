@@ -98,17 +98,17 @@ var pwa = `<!DOCTYPE html>
 </body>
 </html>`
 
-fs.copy('./dist/geojson/gz_2010_us_040_00_20m.json', './public/geojson/states.geojson')
+fs.copy('./geojson/gz_2010_us_040_00_20m.json', './public/geojson/states.geojson')
   .catch(function (err) {
     console.log(err)
   });
 
-fs.copy('./dist/bright-local.json', './public/bright.json')
+fs.copy('./bright-local.json', './public/bright.json')
   .catch(function (err) {
     console.log(err)
   });
 
-fs.copy('./node_modules/mapbox-gl/dist/mapbox-gl.css', './public/mapboxgl.css')
+fs.copy('./node_modules/mapbox-gl/mapbox-gl.css', './public/mapboxgl.css')
   .then(function () {
     console.log('copied mapbox.css')
   })
@@ -117,7 +117,7 @@ fs.copy('./node_modules/mapbox-gl/dist/mapbox-gl.css', './public/mapboxgl.css')
     console.log(err)
   });
 
-fs.copy('./node_modules/mapbox-gl/dist/mapbox-gl.js', './public/mapboxgl.js')
+fs.copy('./node_modules/mapbox-gl/mapbox-gl.js', './public/mapboxgl.js')
   .then(function () {
     console.log('copied mapbox.js')
     if (!fs.existsSync('./public/index.html') || process.argv[2] === "force") {

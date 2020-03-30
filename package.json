@@ -8,7 +8,7 @@
     "build": "node scripts/pwa-build",
     "copy": "node scripts/pwa-clone-basemap",
     "start": "http-server -p 8000 -o",
-    "start-dev": "http-server ./dist",
+    "start-dev": "http-server ./",
     "deploy": "node_modules/netlify-cli/bin/run deploy --prod",
     "cache": "node scripts/pwa-sw-sample",
     "workbox-wizard": "node node_modules/workbox-cli/build/bin.js wizard",
