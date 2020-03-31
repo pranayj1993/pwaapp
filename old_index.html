@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Progressive Web App Test</title>
-  <link rel="stylesheet" href="css/leaflet.css" />
+
   <link rel="apple-touch-icon" href="touch-icon-iphone.png">
   <script>
     if (
@@ -35,7 +35,7 @@
       //   });
       // }
   </script>
-  <!-- <style>
+  <style>
     html,
     body {
       margin: 0;
@@ -116,16 +116,15 @@
       border: solid thin lightgray;
       box-shadow: none;
     }
-  </style> -->
+  </style>
 </head>
 
 <body>
   <noscript>This website needs Javascripts enable to run.</noscript>
-  <!-- <div id="loading" class="loading loading-lg"></div> -->
-  <!-- <div id="map" class="not-visible"></div> -->
-  <div id='mapdiv' style='height:100%;'></div>
+  <div id="loading" class="loading loading-lg"></div>
+  <div id="map" class="not-visible"></div>
   <script src="/js/mapbox-gl.js"></script>
-  <!-- <script>
+  <script>
     /**
      * Global map object
      */
@@ -295,37 +294,6 @@
         }
       });
     }
-  </script> -->
-  <script src="js/leaflet.js"></script>
-  <script>
-    var center = L.bounds([1.56073, 104.11475], [1.16, 103.502]).getCenter();
-    var map = L.map('mapdiv').setView([center.x, center.y], 12);
-
-    var basemap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Original/{z}/{x}/{y}.png', {
-      detectRetina: true,
-      maxZoom: 18,
-      minZoom: 11,
-      attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
-    });
-
-    map.setMaxBounds([[1.56073, 104.1147], [1.16, 103.502]]);
-
-    basemap.addTo(map);
-    getLocation();
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      }
-    }
-
-    function showPosition(position) {
-      marker = new L.Marker([position.coords.latitude, position.coords.longitude], { bounceOnAdd: false }).addTo(map);
-      var popup = L.popup()
-        .setLatLng([position.coords.latitude, position.coords.longitude])
-        .setContent('You are here!')
-        .openOn(map);
-    }
-
   </script>
 </body>
 
